@@ -22,7 +22,7 @@ function createResponse(name, number, firstname, lastname, date) {
 
 function findPeople(db, cr, name) {
   db.query("SELECT * FROM famous_people", (err, res) => {
-    console.log('err', err);
+    if (err) throw err;
     let count = 0;
     let firstname = [];
     let lastname = [];
